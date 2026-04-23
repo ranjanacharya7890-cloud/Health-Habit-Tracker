@@ -88,7 +88,7 @@ src/
 - Add Habit form with full validation: required fields, category selection, and day-of-week picker
 - Edit Habit: same form pre-filled with existing habit data, accessible from each habit card
 - Delete Habit: removes a habit with a confirmation prompt
-- Toggle habits done or pending with streak tracking — streak increases on completion and decreases when unmarked
+- Toggle habits done or pending with streak tracking: streak increases on completion and decreases when unmarked
 - Toast notifications: slide-up feedback after every user action
 - LocalStorage persistence: habits are saved in the browser and survive page refreshes
 - Responsive layout: works on mobile and desktop
