@@ -1,0 +1,52 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+.title {
+  font-family: "Fraunces", serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.countBadge {
+  background: var(--cream2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+.habitList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ink3);
+}
+.empty h3 {
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  color: var(--ink2);
+  margin-bottom: 8px;
+}
+.empty p {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .page {
+    padding: 20px 16px;
+  }
+}

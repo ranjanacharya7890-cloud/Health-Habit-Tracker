@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filterRow {
+  display: flex;
+  gap: 8px;
+}
+
+.filterBtn {
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filterBtn:hover {
+  border-color: var(--sage);
+  color: var(--sage);
+}
+.active {
+  background: var(--sage3);
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s;
+}
+.searchBox:focus-within {
+  border-color: var(--sage);
+}
+
+.searchIcon {
+  color: var(--ink3);
+  font-size: 22px;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  flex: 1;
+}
+.searchInput::placeholder {
+  color: var(--ink3);
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  color: var(--ink3);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+.clearBtn:hover {
+  color: var(--coral);
+}

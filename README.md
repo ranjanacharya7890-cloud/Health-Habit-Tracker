@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# Habiter - Habit Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ICT 930 Advanced Web Application Development — Assignment 2
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Habiter is a daily habit tracking web application built with React and Vite. It allows users to create, manage, and monitor personal habits across different life categories such as health, fitness, mindset, and learning. The app is designed to be simple to use while meeting all the technical requirements set out in the assessment brief.
+Users can view a daily dashboard, manage their full habit list with filters and search, check off habits for the day, and add or edit habits through a validated form. All data is stored in the browser using localStorage, so habits persist between sessions without needing a backend.
 
-## React Compiler
+## Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 — UI library using functional components and hooks
 
-## Expanding the ESLint configuration
+- Vite — fast build tool and local development server
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React Router v7 — client-side routing between pages
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Context API — global state management for habit data
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- CSS Modules — scoped component-level styling
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- localStorage — browser-based data persistence
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Make sure you have Node.js version 16 or higher installed before starting.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Step 1 — Clone or extract the project
+
+If you received a ZIP file, extract it. If you have the GitHub link, run:
+git clone <repository-url>
+
+### Step 2 — Install dependencies
+
+cd habitly
+npm install
+
+### Step 3 — Run the development server
+
+npm run dev
+Then open your browser and go to http://localhost:5173
+
+### Step 4 — Build for production (optional)
+
+npm run build
+
+## Project Structure
+
+src/
+├── components/
+│ ├── Navbar.tsx
+│ ├── Navbar.module.css
+│ ├── HabitCard.tsx
+│ ├── HabitCard.module.css
+│ ├── FilterBar.tsx
+│ ├── FilterBar.module.css
+│ ├── Toast.tsx
+│ └── Toast.module.css
+├── context/
+│ └── HabitContext.tsx
+├── data/
+│ └── habits.ts
+├── pages/
+│ ├── Dashboard.tsx
+│ ├── Dashboard.module.css
+│ ├── HabitsList.tsx
+│ ├── HabitsList.module.css
+│ ├── Today.tsx
+│ ├── Today.module.css
+│ ├── HabitForm.tsx
+│ └── HabitForm.module.css
+├── App.tsx
+├── main.tsx
+└── index.css
+
+## Key Features
+
+- Dashboard with four summary cards: total habits, completed today, best streak, and active categories
+
+- Live progress bar showing how many of today's habits have been completed
+
+- All Habits page with real-time search and three filter options: All, Done, and Pending
+
+- Today's Checklist — a focused view showing only habits scheduled for the current day
+
+- Add Habit form with full validation — required fields, category selection, and day-of-week picker
+
+- Edit Habit — same form pre-filled with existing habit data, accessible from each habit card
+
+- Delete Habit — removes a habit with a confirmation prompt
+
+- Toggle habits done or pending with streak tracking — streak increases on completion and decreases when unmarked
+
+- Toast notifications — slide-up feedback after every user action
+
+- LocalStorage persistence — habits are saved in the browser and survive page refreshes
+
+- Responsive layout — works on mobile and desktop
+
+- Loading state on the form page — simulates async data fetching
+
+- Error state on the edit page — handles cases where a habit ID is not found
+
+## Design Decisions
+
+A warm, light colour scheme was chosen to give the app a clean and welcoming feel that suits a daily productivity tool. The background uses a soft cream tone (#faf7f2) with white cards and subtle shadows to create depth without heaviness. The primary accent colour is sage green (#5a7a5e), used for active states, buttons, and the progress bar. Coral (#e07a5f) is used for streak indicators and error feedback, while warm gold (#c8943a) highlights learning category badges.
+
+CSS Modules were used instead of a CSS framework so that styles are scoped to each component, preventing naming conflicts as the project grows. This also makes the codebase easier to maintain.
+
+Context API was chosen over a third-party library like Redux or Zustand because the app's state is simple enough that a built-in solution avoids adding unnecessary dependencies. The context also exposes derived functions like getTodaysHabits() and getFilteredHabits() so pages do not need to calculate these themselves.
+
+Fraunces is used for headings to create visual hierarchy and a distinctive editorial feel, while DM Sans is used for body text and UI elements. The combination gives the app a refined, human look without relying on generic system fonts.
