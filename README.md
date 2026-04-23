@@ -24,7 +24,7 @@ Make sure you have **Node.js version 16 or higher** installed before starting.
 If you received a ZIP file, extract it to a folder of your choice. If you have the GitHub link, run:
 
 ```bash
-git clone <repository-url>
+git clone <[repository-url](https://github.com/ranjanacharya7890-cloud/Health-Habit-Tracker.git)>
 ```
 
 **Step 2 — Install dependencies**
