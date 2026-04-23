@@ -85,7 +85,7 @@ src/
 - Live progress bar showing how many of today's habits have been completed
 - All Habits page with real-time search and three filter options: All, Done, and Pending
 - Today's Checklist: a focused view showing only habits scheduled for the current day
-- Add Habit form with full validation — required fields, category selection, and day-of-week picker
+- Add Habit form with full validation: required fields, category selection, and day-of-week picker
 - Edit Habit: same form pre-filled with existing habit data, accessible from each habit card
 - Delete Habit: removes a habit with a confirmation prompt
 - Toggle habits done or pending with streak tracking — streak increases on completion and decreases when unmarked
@@ -97,7 +97,7 @@ src/
 
 ## Design Decisions
 
-- A warm, light colour scheme was chosen to give the app a clean and welcoming feel that suits a daily productivity tool. The background uses a soft cream tone (#faf7f2) with white cards and subtle shadows to create depth without heaviness. The primary accent colour is sage green (#5a7a5e), used for active states, buttons, and the progress bar. Coral (#e07a5f) is used for streak indicators and error feedback, while warm gold (#c8943a) highlights learning category badges.
+- A warm with light colour scheme was chosen to give the app a clean and welcoming feel that suits a daily productivity tool. The background uses a soft cream tone (#faf7f2) with white cards and subtle shadows to create depth without heaviness. The primary accent colour is sage green (#5a7a5e), used for active states, buttons, and the progress bar. Coral (#e07a5f) is used for streak indicators and error feedback, while warm gold (#c8943a) highlights learning category badges.
 
 - CSS Modules were used instead of a CSS framework so that styles are scoped to each component, preventing naming conflicts as the project grows. This also makes the codebase easier to maintain.
 
